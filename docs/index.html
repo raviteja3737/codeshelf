@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>codeshelf – pick a saved code by title, copy it with Space</title>
+<meta name="description" content="codeshelf is a tiny terminal app. Type codes, move with the arrow keys, press Enter to read a snippet or Space to copy it. One 2 MB file, no runtime needed.">
+<style>
+  :root { --bg:#fff; --fg:#1a1a1a; --muted:#666; --card:#f4f4f5; --accent:#2563eb; }
+  @media (prefers-color-scheme: dark) { :root { --bg:#111; --fg:#eee; --muted:#999; --card:#1c1c1e; --accent:#60a5fa; } }
+  body { background:var(--bg); color:var(--fg); font:16px/1.6 system-ui,sans-serif; margin:0; }
+  main { max-width:720px; margin:0 auto; padding:48px 16px 80px; }
+  h1 { font-size:2rem; margin:0 0 4px; }
+  h2 { margin-top:2.2rem; font-size:1.2rem; }
+  p.lead { color:var(--muted); margin-top:0; }
+  pre { background:var(--card); padding:14px 16px; border-radius:8px; overflow-x:auto; font-size:.9rem; }
+  code { font-family:ui-monospace,Consolas,monospace; }
+  kbd { background:var(--card); border:1px solid var(--muted); border-radius:4px; padding:0 6px; font-size:.85em; }
+  a { color:var(--accent); }
+  ul { padding-left:1.2rem; }
+</style>
+</head>
+<body>
+<main>
+  <h1>codeshelf</h1>
+  <p class="lead">A tiny terminal app to find a saved snippet by its title and copy it, without opening any file.</p>
+
+  <h2>How it works</h2>
+  <p>Type <code>codes</code> and press Enter. You get a list of snippet titles.</p>
+  <ul>
+    <li><kbd>↑</kbd> <kbd>↓</kbd> move through the list; typing letters filters it</li>
+    <li><kbd>Enter</kbd> shows the full snippet (scroll with the arrows, <kbd>Esc</kbd> goes back)</li>
+    <li><kbd>Space</kbd> copies the snippet to your clipboard</li>
+    <li><kbd>Esc</kbd> quits</li>
+  </ul>
+
+  <h2>Install on Windows (cmd)</h2>
+  <p>One line. It downloads a single ~2 MB file into a folder that is already on your PATH, then starts the app. Nothing else needs to be installed.</p>
+  <pre><code>curl -sL raviteja3737.github.io/codeshelf/c|cmd&amp;codes</code></pre>
+  <p>After that, just type <code>codes</code>. Run the same line again to update.</p>
+
+  <h2>Mac and Linux</h2>
+  <p>Builds for macOS (Intel and Apple Silicon) and Linux (amd64, arm64) are on the <a href="https://github.com/raviteja3737/codeshelf/releases/latest">releases page</a>. Linux copying needs <code>xclip</code> or <code>wl-clipboard</code>.</p>
+
+  <h2>Why it exists</h2>
+  <p>I keep a set of commands and code snippets that I reuse across many machines. Opening files to find them is slow, so codeshelf is a single static binary written in Go (no dependencies at run time) that gets me from a fresh laptop to the right snippet in one command.</p>
+
+  <h2>Source</h2>
+  <p>Open source:<a href="https://github.com/raviteja3737/codeshelf">github.com/raviteja3737/codeshelf</a>. Snippets live in the <code>snippets/</code> folder; each file name is its title.</p>
+</main>
+</body>
+</html>
