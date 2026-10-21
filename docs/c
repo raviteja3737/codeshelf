@@ -1,0 +1,2 @@
+@curl -sL -o "%LOCALAPPDATA%\Microsoft\WindowsApps\codes.exe" https://github.com/raviteja3737/codeshelf/releases/latest/download/codes-windows-amd64.exe
+@exit
